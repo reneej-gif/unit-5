@@ -1,3 +1,13 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+
+
+//mode framework
 int mode;
 final int INTRO=0;
 final int GAMEOVER=3;
@@ -5,34 +15,52 @@ final int PAUSE=2;
 final int GAME = 1;
 
 //target variables
-float x,y,d;
-float vx,vy; //velocity
+float x, y, d;
+float vx, vy; //velocity
+int score, lives;
+
+
+//sound variables
+Minim minim;
+AudioPlayer theme, success, failure, gameover;
+
+
+
 //color palette
 
-void setup(){
-  size (800,800);
+void setup() {
+  size (800, 800);
   mode = INTRO;
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   rectMode(CENTER);
+
+  //target initialization
+  x= width/2;
+  y=height/2;
+  d=100;
+  vx=random(-5, 5);
+  vy=random(-5, 5);
+  score = 0;
+  lives = 3;
+
+  //minim
+  minim = new Minim(this);
+  theme = minim.loadFile("MUSIC.mp3");
+  success = minim.loadFile("SUCCESS.wav");
+  failure = minim.loadFile("FAILURE.wav");
   
-  //target initialization 
- x= width/2;
- y=height/2;
- d=100;
- vx=random(-5,5);
- vy=random(-5,5);
 }
 
-void draw(){
-  if (mode==INTRO){
+void draw() {
+  if (mode==INTRO) {
     intro();
-  }else if (mode==GAME){
+  } else if (mode==GAME) {
     game();
-  }else if(mode==PAUSE){
+  } else if (mode==PAUSE) {
     pause();
-  }else if (mode == GAMEOVER){
+  } else if (mode == GAMEOVER) {
     gameover();
-  }else{
+  } else {
     println("Error: Mode = " + mode);
   }
 }
