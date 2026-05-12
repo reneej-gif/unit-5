@@ -1,3 +1,4 @@
+
 void game(){
   
   
@@ -11,6 +12,7 @@ void game(){
   
   
   fill(0);
+  textSize(30);
   text("Score: " + score, width/2,50);
   text("Lives: "+lives, width/2,100);
   
@@ -43,6 +45,6 @@ void gameClicks(){
     lives = lives-1;
     failure.rewind();
     failure.play();
-    if(lives==0) mode=GAMEOVER;
+    if(lives<=0) mode=GAMEOVER;
   }
 }

@@ -1,5 +1,7 @@
 void pause(){
 theme.pause();
+textSize(50);
+text("PAUSE", 400,400);
 }
 
 void pauseClicks(){
