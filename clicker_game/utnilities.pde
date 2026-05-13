@@ -8,10 +8,10 @@ void rectButton(String text, float x, float y, float w, float h){
     stroke(0);
     fill(255);
   }
-  textSize(60);
+  textSize(50);
   rect(x,y,w,h);
   fill(0);
-  text(text, y, y);
+  text(text, x, y);
 }
 void reset(){
   //socre
