@@ -16,10 +16,13 @@ final int GAME = 1;
 final int OPTIONS = 4;
 
 //target variables
-float x, y, d;
+float x, y, d, sliderY;
 float vx, vy; //velocity
 int score, highscore, lives;
 
+PImage kirby;
+PImage mushroom;
+PImage star;
 
 //sound variables
 Minim minim;
@@ -31,9 +34,14 @@ AudioPlayer theme, success, failure, gameover;
 
 void setup() {
   size (800, 800);
-  mode = INTRO;
+  mode = OPTIONS;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
+  
+  //customization
+  kirby = loadImage("kirby.png");
+  star = loadImage("star.jpg");
+  mushroom = loadImage("mushroom.png");
 
   //target initialization
   x= width/2;
@@ -41,6 +49,7 @@ void setup() {
   d=200;
   vx=random(-5, 5);
   vy=random(-5, 5);
+  sliderY=500;
   score = 0;
   highscore = 0;
   lives = 3;

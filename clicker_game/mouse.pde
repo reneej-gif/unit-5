@@ -1,4 +1,5 @@
 void mouseReleased(){
+  controlslider();
  if (mode==INTRO){
     introClicks();
   }else if (mode==GAME){
@@ -10,4 +11,7 @@ void mouseReleased(){
   }  else if(mode == OPTIONS){
     optionsClicks();
   }
+}
+void mouseDragged(){
+  controlslider();
 }
