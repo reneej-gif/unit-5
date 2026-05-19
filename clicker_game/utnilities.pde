@@ -46,7 +46,7 @@ void circleButton(float x, float y, float r) {
 }
 void tactile(float x, float y) {
   if (dist(x, y, mouseX, mouseY)<20) {
-    stroke(255);
+    stroke(255,0,0);
   } else {
     stroke(0);
   }

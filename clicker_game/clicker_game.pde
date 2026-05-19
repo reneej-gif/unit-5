@@ -16,13 +16,14 @@ final int GAME = 1;
 final int OPTIONS = 4;
 
 //target variables
-float x, y, d, sliderY;
+float x, y, d, sliderY,r;
 float vx, vy; //velocity
 int score, highscore, lives;
 
 PImage kirby;
 PImage mushroom;
 PImage star;
+PImage p;
 
 //sound variables
 Minim minim;
