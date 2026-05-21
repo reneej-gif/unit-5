@@ -17,10 +17,20 @@ void game() {
   ballx=ballx+vx;
   bally=bally+vy;
   
+  //scorecount
+  
+  
   
   //scoring
   if(ballx<0){
-    
+    rightscore++;
+    ballx=width/2;
+    bally=height/2;
+  }
+    if(ballx>800){
+    leftscore++;
+    ballx=width/2;
+    bally=height/2;
   }
   
   

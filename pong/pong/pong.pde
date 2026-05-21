@@ -8,6 +8,7 @@ final int GAME = 1;
 //entity variables
 float leftx, lefty, leftd, rightd, rightx, righty;//paddle
 float ballx, bally, balld,vx,vy;
+int rightscore, leftscore;
 
 //keyboard variables
 boolean wkey,skey,upkey,downkey;
@@ -35,6 +36,10 @@ void setup(){
   balld=100;
   vx=5;
   vy=5;
+  
+  //scoore
+  rightscore=0;
+  leftscore=0;
 
   
   //keybaord 
