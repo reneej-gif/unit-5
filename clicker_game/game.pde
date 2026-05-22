@@ -2,13 +2,15 @@
 void game(){
   
   
-  background(0,255,0);
+  background(200);
   
   
   //pause
   stroke(0);
   fill(255);
-  circle(100,100,100);
+  circleButton(100,100,100);
+  line(90,80,90,120);
+  line(110,80,110,120);
   
   
   fill(0);
@@ -19,24 +21,27 @@ void game(){
   //ball
   fill(255);
   strokeWeight(5);
-  ellipse(x,y,d,d);
+  circle(x,y,r*1.15);
+  image(p, x-r/2,y-r/2,r,r);
+
+  
   
   //movig
   x=x+vx;
   y=y+vy;
   
   //bounce
-   if(x<d/2 || x>width-d/2){
+   if(x<r*1.15/2 || x>width-r*1.15/2){
      vx=vx*-1;
    }
-   if(y<d/2 || y>height-d/2){
+   if(y<r*1.15/2 || y>height-r*1.15/2){
      vy=vy*-1;
    }
 }
 
 
 void gameClicks(){
-  if(dist(mouseX,mouseY,x,y)<d/2){
+  if(dist(mouseX,mouseY,x,y)<r*1.15/2){
     score = score+1;
     vx=vx*1.1;
     vy=vy*1.1;

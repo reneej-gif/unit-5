@@ -1,7 +1,9 @@
 void intro(){
   theme.rewind();
   
-  background(255);
+  background(209,226,255);
+  textSize(100);
+  text("SUPER CLICKER", 400, 300);
   rectButton("START",200,600,200,100);
   rectButton("OPTIONS", 600,600,200,100);
   
