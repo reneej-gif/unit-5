@@ -3,6 +3,11 @@ void game() {
   //paddles
   circle(leftx, lefty, leftd);
   circle(rightx, righty, rightd);
+  
+  //cneter line
+  strokeWeight(5);
+  stroke(255);
+  line(width/2,0,width/2,height);
 
   //move paddles
   if (wkey==true) lefty = lefty-5;
@@ -14,30 +19,35 @@ void game() {
   circle(ballx, bally, balld);
 
   //movement
+  if(timer<0){
   ballx=ballx+vx;
   bally=bally+vy;
+  }
   
   //scorecount
-  
-  
+  textSize(50);
+  fill(222,43,43);
+  text(leftscore, width/4, 100);
+  fill(26,206,10);
+  text(rightscore, 3*width/4, 100);
+ // text(timer, 3*width/4, 550);
+  timer=timer-1;
   
   //scoring
   if(ballx<0){
     rightscore++;
     ballx=width/2;
     bally=height/2;
+    timer=100;
   }
     if(ballx>800){
     leftscore++;
     ballx=width/2;
     bally=height/2;
+    timer=100;
   }
   
-  
-  
-  
-  
-  
+
   
   //boucning
   if (bally<balld/2 || bally>height-balld/2) {
