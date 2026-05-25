@@ -50,6 +50,7 @@ void setup() {
   //target initialization
   x= width/2;
   y=height/2;
+  r=200;
   vx=random(-5, 5);
   vy=random(-5, 5);
   sliderY=500;

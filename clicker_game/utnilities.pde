@@ -41,11 +41,11 @@ void rectButton(PImage pic, float x, float y, float w, float h){
    fill(0);
 }
 void circleButton(float x, float y, float r) {
-  tactile(x, y);
+  tactile(x, y,r);
   circle(x, y, r);
 }
-void tactile(float x, float y) {
-  if (dist(x, y, mouseX, mouseY)<20) {
+void tactile(float x, float y,float r) {
+  if (dist(x, y, mouseX, mouseY)<r/2) {
     stroke(255,0,0);
   } else {
     stroke(0);

@@ -9,6 +9,7 @@ void game(){
   stroke(0);
   fill(255);
   circleButton(100,100,100);
+  stroke(0);
   line(90,80,90,120);
   line(110,80,110,120);
   
