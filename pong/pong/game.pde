@@ -23,6 +23,17 @@ void game() {
   ballx=ballx+vx;
   bally=bally+vy;
   }
+  if(lefty<leftd){
+   lefty=lefty+5;
+  }else if(lefty>height-leftd){
+   lefty=lefty-5;
+  }
+   if(righty<leftd){
+  righty=righty+5;
+  }else if(righty>height-leftd){
+   righty=righty-5;
+  }
+  
   
   //scorecount
   textSize(50);
