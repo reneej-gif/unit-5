@@ -12,8 +12,24 @@ void game() {
   //move paddles
   if (wkey==true) lefty = lefty-5;
   if (skey==true) lefty=lefty+5;
+  if(AI==false){
   if (upkey==true) righty = righty-5;
   if (downkey==true) righty=righty+5;
+  }else{
+    /*
+    
+    if ball on right side{
+    if ball above right paddle, move up
+    if ball below right paddle, move down
+    }
+    if ball on left side{
+    right paddle no movement
+    }   
+    
+    
+    */
+    
+  }
 
   //ball
   circle(ballx, bally, balld);

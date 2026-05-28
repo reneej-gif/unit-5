@@ -9,6 +9,7 @@ final int GAME = 1;
 float leftx, lefty, leftd, rightd, rightx, righty;//paddle
 float ballx, bally, balld,vx,vy;
 int rightscore, leftscore, timer;
+boolean AI;
 
 //keyboard variables
 boolean wkey,skey,upkey,downkey;
