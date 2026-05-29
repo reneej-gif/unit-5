@@ -16,7 +16,7 @@ final int GAME = 1;
 final int OPTIONS = 4;
 
 //target variables
-float x, y, sliderY,r;
+float x, y, sliderY, r;
 float vx, vy; //velocity
 int score, highscore, lives;
 
@@ -27,7 +27,7 @@ PImage p;
 
 //sound variables
 Minim minim;
-AudioPlayer theme, success, failure, gameover;
+AudioPlayer theme, success, failure, gameover, clickSound;
 
 
 
@@ -35,12 +35,13 @@ AudioPlayer theme, success, failure, gameover;
 
 void setup() {
   size (800, 800);
-  mode = GAME;
+  mode = INTRO;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
-  
+  PFont myFont = createFont("Impact", 50);
+  textFont(myFont);
 
-  
+
   //customization
   kirby = loadImage("kirby.png");
   star = loadImage("shell.png");
@@ -63,12 +64,12 @@ void setup() {
   theme = minim.loadFile("MUSIC.mp3");
   success = minim.loadFile("SUCCESS.wav");
   failure = minim.loadFile("FAILURE.wav");
-  
+
   reset();
 }
 
 void draw() {
-  
+
   if (mode==INTRO) {
     intro();
   } else if (mode==GAME) {
@@ -77,7 +78,7 @@ void draw() {
     pause();
   } else if (mode == GAMEOVER) {
     gameover();
-  }else if(mode == OPTIONS){
+  } else if (mode == OPTIONS) {
     options();
   } else {
     println("Error: Mode = " + mode);

@@ -1,11 +1,12 @@
 void gameover(){
-  background(255,0,0);
+  background(200,40,40);
   theme.pause();
-  text("GAME OVER", 400,300,100);
-  if(score>highscore){
-    highscore = score;
-  }
-  text("High Score: "+highscore, 400,500,80);
+  theme.rewind();
+  textSize(120);
+  drawtext("GAME OVER", 400, 300, color(50, 0, 0), color(255));
+  
+  textSize(60);
+  drawtext("High Score: " + highscore, 400, 500, color(50, 0, 0), color(255, 200, 0));
  
 }
 

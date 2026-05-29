@@ -1,11 +1,10 @@
 void options(){
-  background(255);
+  background(240);
   fill(255);
   stroke(0);
   strokeWeight(2);
-
-  
-  
+textSize(80);
+  drawtext("OPTIONS", 400, 100, color(100), color(255));
   
   //buttons
   rectButton(mushroom, 150,250,150,150); 

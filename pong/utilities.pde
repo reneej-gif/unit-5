@@ -1,3 +1,21 @@
+void resetGame(){
+  lefty=height/2;
+  righty=height/2;
+  leftscore=0;
+  rightscore=0;
+  
+}
+
+void resetRound(){
+   float startDirection = random(-3, 3);
+  if (random(1) > 0.5) {
+    vx = 3; 
+  } else {
+    vx = -3;
+  }
+  vy = startDirection;
+}
+
 void rectButton(String text, float x, float y, float w, float h){
   if(mouseX>x-w/2 && mouseX<x+w/2 && mouseY>y-h/2 && mouseY<y+h/2){
     strokeWeight(10);
@@ -13,33 +31,6 @@ void rectButton(String text, float x, float y, float w, float h){
   fill(0);
   text(text, x, y);
 }
-void reset(){
-  //socre
-  score = 0;
-  lives = 3;
-  //targets
-  x= width/2;
-  y=height/2;
-   vx=random(-5, 5);
-  vy=random(-5, 5);
-}
-
-void rectButton(PImage pic, float x, float y, float w, float h){
-  if(mouseX>x-w/2 && mouseX<x+w/2 && mouseY>y-h/2 && mouseY<y+h/2){
-    strokeWeight(10);
-    stroke(255,0,0);
-    fill(255);
-  }else{
-    strokeWeight(2);
-    stroke(0);
-    fill(255);
-  }
-   
-   image(pic,x-w/2,y-h/2,w,h);
-   noFill();
-   rect(x,y,w+4,h+2,10);
-   fill(0);
-}
 void circleButton(float x, float y, float r) {
   tactile(x, y,r);
   circle(x, y, r);
@@ -51,11 +42,7 @@ void tactile(float x, float y,float r) {
     stroke(0);
   }
 }
-void controlslider() {
-  if (mouseX > 135 && mouseX<165 && mouseY>400 && mouseY< 650) {
-    sliderY=mouseY;
-  }
-}
+
 
 void drawtext(String t, float x, float y, int shadow, int main) {
   fill(shadow);
