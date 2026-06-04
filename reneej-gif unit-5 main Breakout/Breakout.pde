@@ -19,6 +19,7 @@ int brickd;
 int n;
 int tempx, tempy;
 boolean[] alive;
+color colour;
 
 
 void setup() {
@@ -46,22 +47,23 @@ void setup() {
 
   //set up arraw
   brickd=50;
-  n = 4;
+  n = 32;
   x=new int[n];
   y= new int[n];
+  tempx=50;
+  tempy=100;
   
-
-  x[0]=100;
-  y[0]=100;
-
-  x[1]=400;
-  y[1] =100;
-
-  x[2] = 700;
-  y[2]=100;
-
-  x[3] = 100;
-  y[3]=200;
+int i=0;
+while (i<n){
+  x[i]=tempx;
+  y[i]=tempy;
+  tempx=tempx+100;
+  if(tempx>=width){
+    tempx=50;
+    tempy=tempy+100;
+  }
+  i=i+1;
+}
 }
 
 void draw() {
