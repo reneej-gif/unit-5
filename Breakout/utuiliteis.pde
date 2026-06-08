@@ -1,15 +1,14 @@
-void resetRound(){
+void resetRound() {
   timer=100;
-  
-   ballx=width/2;
+
+  ballx=width/2;
   bally=height/2+200;
   balld=10;
   vx=0;
   vy=1;
-
 }
 
-void resetGame(){
+void resetGame() {
   lives=3;
   score=0;
   paddlex = width/2;
@@ -18,10 +17,10 @@ void resetGame(){
   resetRound();
   int i = 0;
   while (i < n) {
-    alive[i] = true; 
+    alive[i] = true;
     i = i + 1;
   }
-  }
+}
 
 void drawtext(String t, float x, float y, int shadow, int main) {
   fill(shadow);

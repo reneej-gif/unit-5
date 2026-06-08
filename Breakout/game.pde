@@ -1,15 +1,15 @@
 void game() {
-theme.pause();
+  theme.pause();
   background(0);
   timer=timer-1;
 
-//display
-fill(255);
+  //display
+  fill(255);
   textSize(20);
   text("Score: " + score, 80, 30);
   text("Lives: " + lives, width - 80, 30);
-  
-  
+
+
   //paddles
   noStroke();
   fill(255);
@@ -62,8 +62,8 @@ fill(255);
     }
     i++;
   }
-  
-  if(score==n) mode=GAMEOVER;
+
+  if (score==n) mode=GAMEOVER;
 }
 
 
