@@ -4,7 +4,7 @@ void game(){
   }else{
     background(blue);
   }
-  
+  currentHole = 2;
   noStroke();
   fill(green);
   strokeWeight(3);
