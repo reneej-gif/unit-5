@@ -31,7 +31,10 @@ void setup(){
   strokes = 0;
   redstrokes = 0;
   bluestrokes = 0;
-  currentHole = 1;
+  currentHole = 4;
+  
+  
+  
   //initialization
   balld = 20;
   holed = 20;

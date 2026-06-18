@@ -10,6 +10,7 @@ void drawCourse(){
   
   if(currentHole == 1){
     wall(200,500,550,50);
+    wall(700,250,550,50);
   }else if(currentHole == 2){
     wall(400,400,400,50);
   }else if(currentHole == 3){
@@ -35,7 +36,7 @@ void drawHole(){
   }else if (currentHole == 3){
     startx = 400; starty = 700; holex = 400; holey = 100;
   }else if (currentHole == 4){ 
-    startx = 400; starty = 700; holex = 700; holey = 700;
+    startx = 400; starty = 700; holex = 400; holey = 300;
   }else if (currentHole == 5){
     startx = 400; starty = 750; holex = 400; holey = 400;
   }
@@ -51,18 +52,16 @@ void wall(float x, float y, float w, float h){
   noStroke();
   rect(x, y, w, h);
   
-  //if(ballx+balld/2 > x-w/2 && ballx-balld/2 < x+ w/2 
-  //&& bally+balld/2> y-h/2 && bally-balld/2 < y+h/2){
-  //  if(sidex+balld/2 <= x-w/2 || sidex-balld/2>=x+w/2){
-  //    bvx=bvx*-1;
-  //    ballx=ballx+bvx*2;
-  //  }
-  //  if(sidey+balld/2<=y-h/2 || sidey-balld/2 >= y+h/2){
-  //    bvy = bvy*-1;
-  //    bally=bally+bvy*2;
-  //  }
-  //}
-   
+  if(ballx+balld/2 > x-w/2 && ballx-balld/2 < x+ w/2 && bally+balld/2> y-h/2 && bally-balld/2 < y+h/2){
+    if(sidex+balld/2 <= x-w/2 || sidex-balld/2>=x+w/2){
+      bvx=bvx*-1;
+      ballx=sidex;
+    }
+    if(sidey+balld/2<=y-h/2 || sidey-balld/2 >= y+h/2){
+      bvy = bvy*-1;
+      bally=sidey;
+    }
+  }
 }
 
 

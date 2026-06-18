@@ -4,7 +4,7 @@ void game(){
   }else{
     background(blue);
   }
-  currentHole = 2;
+  
   noStroke();
   fill(green);
   strokeWeight(3);
@@ -17,6 +17,9 @@ void game(){
   stroke(80);
   fill(0);
   circle(holex,holey,holed);
+  
+  sidex = ballx;
+  sidey = bally;
   
   //movement
   ballx = ballx+bvx;
@@ -62,7 +65,12 @@ void game(){
     score();
     
   }
- 
+  
+//speed limit
+if (bvx>15) bvx = 15;
+if (bvx<-15) bvx = -15;
+if (bvy>15) bvy = 15;
+if (bvy<-15) bvy = -15;
 }
 void gameClicks(){
   
