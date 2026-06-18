@@ -15,20 +15,30 @@ void drawCourse(){
     wall(400,400,400,50);
   }else if(currentHole == 3){
     wall(200,400,100,500);
+    wall(400,400,100,500);
     wall(600,400,100,500);
   }else if(currentHole == 4){
     wall(400,600,400,50);
     wall(225,400,50,400);
     wall(575,400,50,400);
+  }else if(currentHole == 5){
+    wall(200,600,30,100);
+    wall(600,600,30,100);
+    wall(400,300,150,30);
+    fill(250,223,68);
+    circle(400,500,200);
+    if (dist(ballx, bally, 400, 500)<=100+balld/2) {
+    bvx=(ballx-400)/5;
+    bvy=(bally-500)/5;
+    
+  }
   }
   
 }
 
 void drawHole(){
-  bvy=0;
   bvx=0;
-  aiming = false;
-  
+  bvy=0;
   if (currentHole == 1){
     startx = 100; starty = 700; holex = 700; holey = 100;
   }else if (currentHole == 2){
@@ -38,7 +48,7 @@ void drawHole(){
   }else if (currentHole == 4){ 
     startx = 400; starty = 700; holex = 400; holey = 300;
   }else if (currentHole == 5){
-    startx = 400; starty = 750; holex = 400; holey = 400;
+    startx = 400; starty = 750; holex = 400; holey = 200;
   }
   
   ballx=startx;

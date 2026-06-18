@@ -31,7 +31,7 @@ void setup(){
   strokes = 0;
   redstrokes = 0;
   bluestrokes = 0;
-  currentHole = 4;
+  currentHole = 5;
   
   
   
