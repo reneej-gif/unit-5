@@ -4,6 +4,7 @@ void game() {
   } else {
     background(blue);
   }
+  timer=timer-1;
 
   noStroke();
   fill(green);
@@ -49,17 +50,15 @@ void game() {
 
 
   //stroke number
-  textAlign(CENTER, TOP);
+  textAlign(CENTER,CENTER);
   text("Hole: " +currentHole+ "/5", 400, 30);
   text("Strokes: " +strokes, 400, 70);
 
   // score setup
-  fill(255);
+  fill(0);
   textSize(30);
-  textAlign(LEFT, TOP);
-  text("Red Score: " + redstrokes, 30, 30);
-  textAlign(RIGHT, TOP);
-  text("Blue Score: " + bluestrokes, width-30, 30);
+  text("Red Strokes: " + redstrokes, 130, 40);
+  text("Blue Strokes: " + bluestrokes, width-130, 40);
 
   if (dist(ballx, bally, holex, holey)<holed/2) {
     score();

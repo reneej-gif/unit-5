@@ -8,7 +8,7 @@ float ballx, bally, bvy,bvx;
 float balld;
 
 float holex,holey, holed;
-float startx,starty, powerx,powery;
+float startx,starty, powerx,powery, timer;
 
 int player;
 color red=#ff6464;
@@ -24,16 +24,12 @@ boolean aiming = false;
 void setup(){
   pixelDensity(1);
   size (800,800);
-  mode = GAME;
+  mode = INTRO;
   textAlign(CENTER,CENTER);
   rectMode(CENTER);
-  player = 1;
-  strokes = 0;
-  redstrokes = 0;
-  bluestrokes = 0;
-  currentHole = 5;
+ resetGame();
   
-  
+ aiming = false;
   
   //initialization
   balld = 20;
@@ -42,6 +38,8 @@ void setup(){
   bally = 700;
   holex = 700;
   holey = 100;
+  bally=starty;
+  ballx = startx;
   sidex =  ballx-bvx;
   sidey = bally-bvy;
 }
