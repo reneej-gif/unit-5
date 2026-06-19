@@ -1,5 +1,5 @@
 
-
+//
 
 
 void drawCourse() {
@@ -27,6 +27,8 @@ void drawCourse() {
     wall(400, 300, 150, 30);
     fill(250, 223, 68);
     circle(400, 500, 200);
+
+
     if (dist(ballx, bally, 400, 500)<=100+balld/2) {
       bvx=(ballx-400)/5;
       bvy=(bally-500)/5;
@@ -38,6 +40,7 @@ void drawHole() {
   bvx=0;
   bvy=0;
   aiming = false;
+
   if (currentHole == 1) {
     startx = 100;
     starty = 700;
@@ -91,18 +94,18 @@ void wall(float x, float y, float w, float h) {
 
 void score() {
   if (player == 1) {
-    redstrokes += strokes;
+    redstrokes = redstrokes+ strokes;
     player = 2;
     strokes = 0;
     drawHole();
   } else {
-    bluestrokes += strokes;
+    bluestrokes =bluestrokes+strokes;
     player=1;
     strokes = 0;
     currentHole++;
     drawHole();
 
-    if (currentHole > 1) {
+    if (currentHole > 5) {
       mode = GAMEOVER;
     } else {
       drawHole();
@@ -147,5 +150,5 @@ void rectButton(String t, float x, float y, float w, float h) {
   rect(x, y, w, h, 15);
   fill(0);
   textSize(30);
-  text(t, x, y - 5);
+  text(t, x, y-5);
 }

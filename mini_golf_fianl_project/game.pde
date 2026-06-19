@@ -50,7 +50,7 @@ void game() {
 
 
   //stroke number
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   text("Hole: " +currentHole+ "/5", 400, 30);
   text("Strokes: " +strokes, 400, 70);
 

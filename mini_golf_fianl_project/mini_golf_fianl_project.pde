@@ -4,11 +4,11 @@ final int GAMEOVER=3;
 final int PAUSE=2;
 final int GAME = 1;
 
-float ballx, bally, bvy,bvx;
+float ballx, bally, bvy, bvx;
 float balld;
 
-float holex,holey, holed;
-float startx,starty, powerx,powery, timer;
+float holex, holey, holed;
+float startx, starty, powerx, powery, timer;
 
 int player;
 color red=#ff6464;
@@ -21,16 +21,16 @@ float sidex, sidey;
 boolean aiming = false;
 
 
-void setup(){
+void setup() {
   pixelDensity(1);
-  size (800,800);
+  size (800, 800);
   mode = INTRO;
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   rectMode(CENTER);
- resetGame();
-  
- aiming = false;
-  
+  resetGame();
+
+  aiming = false;
+
   //initialization
   balld = 20;
   holed = 20;
@@ -44,16 +44,16 @@ void setup(){
   sidey = bally-bvy;
 }
 
-void draw(){
-  if (mode==INTRO){
+void draw() {
+  if (mode==INTRO) {
     intro();
-  }else if (mode==GAME){
+  } else if (mode==GAME) {
     game();
-  }else if(mode==PAUSE){
+  } else if (mode==PAUSE) {
     pause();
-  }else if (mode == GAMEOVER){
+  } else if (mode == GAMEOVER) {
     gameover();
-  }else{
+  } else {
     println("Error: Mode = " + mode);
   }
 }
